@@ -1,5 +1,6 @@
+#-*- coding: utf-8 -*-
 '''
-Created on 2014Äê10ÔÂ30ÈÕ
+Created on 2014å¹´10æœˆ30æ—¥
 
 @author: Winter
 '''
@@ -18,17 +19,17 @@ def formatPortSettins(settings):
         
 def checkData(data, _type):
     if data == '':
-        return False, u"Êı¾İ²»ÄÜÎª¿Õ"
+        return False, u"æ•°æ®ä¸èƒ½ä¸ºç©º"
 
     errch, msg = None, "success"
     if _type == "hex":
         data = ''.join(data.split())
         if len(data) % 2 != 0:
-            errch, msg = True, u"HEXÄ£Ê½ÏÂ£¬Êı¾İ³¤¶È±ØĞëÎªÅ¼Êı"
+            errch, msg = True, u"HEXæ¨¡å¼ä¸‹ï¼Œæ•°æ®é•¿åº¦å¿…é¡»ä¸ºå¶æ•°"
         else:
             for ch in data.upper():
                 if not ('0' <= ch <= '9' or 'A' <= ch <= 'F'):
-                    errch, msg = ch, u"Êı¾İÖĞº¬ÓĞ·Ç·¨µÄHEX×Ö·û"
+                    errch, msg = ch, u"æ•°æ®ä¸­å«æœ‰éæ³•çš„HEXå­—ç¬¦"
                     break
                     
     return not errch, msg

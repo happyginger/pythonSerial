@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding/MyCOM_UiHandler.py=utf-8
+encoding/MySerial.py=utf-8
 encoding/Ui_serial.py=utf-8
+encoding/Util.py=utf-8
 encoding/serialCom.py=utf-8
 encoding/serialMain.py=utf-8

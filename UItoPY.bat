@@ -1,0 +1,1 @@
+pyuic4 -o Ui_serial.py serial.ui

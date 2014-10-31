@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\python\serial\serial.ui'
+# Form implementation generated from reading ui file 'serial.ui'
 #
-# Created: Thu Oct 30 22:32:46 2014
+# Created: Sat Nov 01 00:31:42 2014
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -194,7 +194,7 @@ class Ui_Dialog(object):
         self.bytesize.setItemText(2, _translate("Dialog", "6", None))
         self.bytesize.setItemText(3, _translate("Dialog", "5", None))
         self.stopbits.setItemText(0, _translate("Dialog", "1", None))
-        self.parity.setItemText(0, _translate("Dialog", "no", None))
+        self.parity.setItemText(0, _translate("Dialog", "N", None))
         self.openPortButton.setText(_translate("Dialog", "打开串口", None))
         self.SendDataButton.setText(_translate("Dialog", "发送数据", None))
         self.ClearSendButton.setText(_translate("Dialog", "清空发送", None))
@@ -202,14 +202,4 @@ class Ui_Dialog(object):
         self.recountButton.setText(_translate("Dialog", "重新计数", None))
         self.receiveeditlabel.setText(_translate("Dialog", "接收区", None))
         self.sendeditlabel.setText(_translate("Dialog", "发送区", None))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    Dialog = QtGui.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
 

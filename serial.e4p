@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
 <!-- eric project file for project serial -->
-<!-- Saved: 2014-10-30, 19:53:52 -->
+<!-- Saved: 2014-10-31, 23:59:30 -->
 <!-- Copyright (C) 2014 ,  -->
 <Project version="5.1">
   <Language></Language>
@@ -12,8 +12,11 @@
   <Version>0.1</Version>
   <Author></Author>
   <Email></Email>
+  <Eol index="-1"/>
   <Sources/>
-  <Forms/>
+  <Forms>
+    <Form>serial.ui</Form>
+  </Forms>
   <Translations/>
   <Resources/>
   <Interfaces/>

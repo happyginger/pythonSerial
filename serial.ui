@@ -176,7 +176,7 @@
             <widget class="QComboBox" name="parity">
              <item>
               <property name="text">
-               <string>no</string>
+               <string>N</string>
               </property>
              </item>
             </widget>
