@@ -49,3 +49,8 @@ class MyCOM_UiHandler(MyCOM_UIForm):
         self.ReceivetextBrowser.append('<b>Recv</b> @%s<br/><font color="yellow">%s</font><br/><br/>'
                                     % (ctime(), data))
         self.receivecount.display(self.receivecount.intValue() + bytes)
+        
+    def setPortCombo(self,i,value):
+        self.port.addItem(value)
+    def removePortItems(self,num):
+        self.port.removeItem(num)

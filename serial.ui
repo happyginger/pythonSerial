@@ -72,58 +72,7 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QComboBox" name="port">
-             <item>
-              <property name="text">
-               <string>COM1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM5</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM6</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM7</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM8</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM9</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>COM10</string>
-              </property>
-             </item>
-            </widget>
+            <widget class="QComboBox" name="port"/>
            </item>
            <item>
             <widget class="QComboBox" name="baund">
@@ -196,6 +145,13 @@
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QPushButton" name="flashCOM">
+         <property name="text">
+          <string>刷新串口</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QPushButton" name="openPortButton">
          <property name="text">

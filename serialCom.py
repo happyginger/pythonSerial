@@ -8,6 +8,10 @@ from PyQt4 import QtGui,QtCore
 from MyCOM_UiHandler import MyCOM_UiHandler
 import Util
 from MySerial import MySerial
+import _winreg
+PortNum=0
+
+
 
 class MainWidget(QtGui.QDialog):
     def __init__(self, parent=None):
@@ -28,6 +32,7 @@ class MainWidget(QtGui.QDialog):
 #         self.ui.ClearReceiveButton.clicked.connect(self.__onClearReceiveData)
 #         self.ui.ClearSendButton.clicked.connect(self.__onClearSendData)
 #         self.ui.recountButton.clicked.connect(self.__onReCount)
+        self.ui.flashCOM.clicked.connect(self.__onFlashCOM)
         
     def __openPort(self, settings=None):
 #         print settings
@@ -64,3 +69,20 @@ class MainWidget(QtGui.QDialog):
             self.flags["__isopen__"] = True
             self.serial.start()
             self.ui.onPortOpened()
+        
+    def __onFlashCOM(self):
+        global PortNum
+        print PortNum
+        for num in range(PortNum-1,-1,-1):
+            self.ui.removePortItems(num)
+        key = _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE,r"HARDWARE\DEVICEMAP\SERIALCOMM")
+        try:
+            PortNum=0
+            while 1:
+                    
+                name,value,type = _winreg.EnumValue(key,PortNum)
+                print value
+                self.ui.setPortCombo(PortNum, value)
+                PortNum+=1
+        except WindowsError:
+            print PortNum   

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'serial.ui'
 #
-# Created: Sat Nov 01 00:31:42 2014
+# Created: Sat Nov 01 12:05:12 2014
 #      by: PyQt4 UI code generator 4.11.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -61,16 +61,6 @@ class Ui_Dialog(object):
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
         self.port = QtGui.QComboBox(Dialog)
         self.port.setObjectName(_fromUtf8("port"))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
-        self.port.addItem(_fromUtf8(""))
         self.verticalLayout_2.addWidget(self.port)
         self.baund = QtGui.QComboBox(Dialog)
         self.baund.setObjectName(_fromUtf8("baund"))
@@ -102,6 +92,9 @@ class Ui_Dialog(object):
         self.verticalLayout_8.addWidget(self.line_2)
         self.verticalLayout_3 = QtGui.QVBoxLayout()
         self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
+        self.flashCOM = QtGui.QPushButton(Dialog)
+        self.flashCOM.setObjectName(_fromUtf8("flashCOM"))
+        self.verticalLayout_3.addWidget(self.flashCOM)
         self.openPortButton = QtGui.QPushButton(Dialog)
         self.openPortButton.setObjectName(_fromUtf8("openPortButton"))
         self.verticalLayout_3.addWidget(self.openPortButton)
@@ -177,16 +170,6 @@ class Ui_Dialog(object):
         self.bytesizelabel.setText(_translate("Dialog", "数据位", None))
         self.stopbitslabel.setText(_translate("Dialog", "停止位", None))
         self.paritylabel.setText(_translate("Dialog", "校验", None))
-        self.port.setItemText(0, _translate("Dialog", "COM1", None))
-        self.port.setItemText(1, _translate("Dialog", "COM2", None))
-        self.port.setItemText(2, _translate("Dialog", "COM3", None))
-        self.port.setItemText(3, _translate("Dialog", "COM4", None))
-        self.port.setItemText(4, _translate("Dialog", "COM5", None))
-        self.port.setItemText(5, _translate("Dialog", "COM6", None))
-        self.port.setItemText(6, _translate("Dialog", "COM7", None))
-        self.port.setItemText(7, _translate("Dialog", "COM8", None))
-        self.port.setItemText(8, _translate("Dialog", "COM9", None))
-        self.port.setItemText(9, _translate("Dialog", "COM10", None))
         self.baund.setItemText(0, _translate("Dialog", "9600", None))
         self.baund.setItemText(1, _translate("Dialog", "115200", None))
         self.bytesize.setItemText(0, _translate("Dialog", "8", None))
@@ -195,6 +178,7 @@ class Ui_Dialog(object):
         self.bytesize.setItemText(3, _translate("Dialog", "5", None))
         self.stopbits.setItemText(0, _translate("Dialog", "1", None))
         self.parity.setItemText(0, _translate("Dialog", "N", None))
+        self.flashCOM.setText(_translate("Dialog", "刷新串口", None))
         self.openPortButton.setText(_translate("Dialog", "打开串口", None))
         self.SendDataButton.setText(_translate("Dialog", "发送数据", None))
         self.ClearSendButton.setText(_translate("Dialog", "清空发送", None))
