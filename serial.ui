@@ -6,186 +6,207 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>586</width>
-    <height>386</height>
+    <width>734</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>For My New Car</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>dream.png</normaloff>dream.png</iconset>
   </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_4">
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_8">
+    <layout class="QVBoxLayout" name="verticalLayout_9">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <widget class="QLabel" name="author">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#55ff7f;&quot;&gt;姜博源&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Photo">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>dream.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
        <item>
-        <widget class="QLabel" name="author">
-         <property name="text">
-          <string>Made By Ginger</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout">
+          <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QLabel" name="PortLable">
-             <property name="text">
-              <string>端口</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="baundlabel">
-             <property name="text">
-              <string>波特率</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="bytesizelabel">
-             <property name="text">
-              <string>数据位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="stopbitslabel">
-             <property name="text">
-              <string>停止位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="paritylabel">
-             <property name="text">
-              <string>校验</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QComboBox" name="port"/>
-           </item>
-           <item>
-            <widget class="QComboBox" name="baund">
+            <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <property name="text">
-               <string>9600</string>
-              </property>
+              <widget class="QLabel" name="PortLable">
+               <property name="text">
+                <string>端口</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <property name="text">
-               <string>115200</string>
-              </property>
+              <widget class="QLabel" name="baundlabel">
+               <property name="text">
+                <string>波特率</string>
+               </property>
+              </widget>
              </item>
-            </widget>
+             <item>
+              <widget class="QLabel" name="bytesizelabel">
+               <property name="text">
+                <string>数据位</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="stopbitslabel">
+               <property name="text">
+                <string>停止位</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="paritylabel">
+               <property name="text">
+                <string>校验</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
-            <widget class="QComboBox" name="bytesize">
+            <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <property name="text">
-               <string>8</string>
-              </property>
+              <widget class="QComboBox" name="port"/>
              </item>
              <item>
-              <property name="text">
-               <string>7</string>
-              </property>
+              <widget class="QComboBox" name="baund">
+               <item>
+                <property name="text">
+                 <string>9600</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>115200</string>
+                </property>
+               </item>
+              </widget>
              </item>
              <item>
-              <property name="text">
-               <string>6</string>
-              </property>
+              <widget class="QComboBox" name="bytesize">
+               <item>
+                <property name="text">
+                 <string>8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>5</string>
+                </property>
+               </item>
+              </widget>
              </item>
              <item>
-              <property name="text">
-               <string>5</string>
-              </property>
+              <widget class="QComboBox" name="stopbits">
+               <item>
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </item>
+              </widget>
              </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="stopbits">
              <item>
-              <property name="text">
-               <string>1</string>
-              </property>
+              <widget class="QComboBox" name="parity">
+               <item>
+                <property name="text">
+                 <string>N</string>
+                </property>
+               </item>
+              </widget>
              </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="parity">
-             <item>
-              <property name="text">
-               <string>N</string>
-              </property>
-             </item>
-            </widget>
+            </layout>
            </item>
           </layout>
          </item>
         </layout>
        </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="line_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QPushButton" name="flashCOM">
-         <property name="text">
-          <string>刷新串口</string>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="openPortButton">
-         <property name="text">
-          <string>打开串口</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="SendDataButton">
-         <property name="text">
-          <string>发送数据</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="ClearSendButton">
-         <property name="text">
-          <string>清空发送</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="ClearReceiveButton">
-         <property name="text">
-          <string>清空接收</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="recountButton">
-         <property name="text">
-          <string>重新计数</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="flashCOM">
+           <property name="text">
+            <string>刷新串口</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="openPortButton">
+           <property name="text">
+            <string>打开串口</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SendDataButton">
+           <property name="text">
+            <string>发送数据</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ClearSendButton">
+           <property name="text">
+            <string>清空发送</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ClearReceiveButton">
+           <property name="text">
+            <string>清空接收</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="recountButton">
+           <property name="text">
+            <string>重新计数</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -214,13 +235,30 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLabel" name="receiveeditlabel">
            <property name="text">
             <string>接收区</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton">
+           <property name="text">
+            <string>ASCII</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_2">
+           <property name="text">
+            <string>HEX</string>
            </property>
           </widget>
          </item>
@@ -234,31 +272,25 @@
         </layout>
        </item>
        <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
         <widget class="QTextBrowser" name="ReceivetextBrowser"/>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLabel" name="sendeditlabel">
            <property name="text">
             <string>发送区</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
            </property>
           </widget>
          </item>
@@ -272,19 +304,6 @@
         </layout>
        </item>
        <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
         <widget class="QTextEdit" name="SendtextEdit"/>
        </item>
       </layout>
@@ -292,6 +311,13 @@
     </layout>
    </item>
   </layout>
+  <zorder>line</zorder>
+  <zorder>radioButton</zorder>
+  <zorder>radioButton_2</zorder>
+  <zorder>sendcount</zorder>
+  <zorder>Photo</zorder>
+  <zorder>verticalSpacer</zorder>
+  <zorder>author</zorder>
  </widget>
  <resources/>
  <connections/>

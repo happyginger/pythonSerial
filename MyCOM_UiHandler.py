@@ -8,7 +8,7 @@ from time import ctime
 from PyQt4.QtGui import QKeySequence, QIcon, QPixmap
 from PyQt4.QtCore import Qt
 from Ui_serial import Ui_Dialog as MyCOM_UIForm
-
+import Util
 
 class MyCOM_UiHandler(MyCOM_UIForm):
     def __init__(self, parent=None):
@@ -42,15 +42,41 @@ class MyCOM_UiHandler(MyCOM_UIForm):
         
     def onRecvData(self, data):
         bytes = len(data)
-#         if not self.radioButton.isChecked():
-#             data = Util.toVisualHex(data)
-#         else:
-        data = data.replace('\n', '<br/>')
-        self.ReceivetextBrowser.append('<b>Recv</b> @%s<br/><font color="yellow">%s</font><br/><br/>'
-                                    % (ctime(), data))
+        if not self.radioButton.isChecked():
+            data = Util.toVisualHex(data)
+        else:
+            data = data.replace('\n', '<br/>')
+        self.ReceivetextBrowser.append('<b>Recv</b> @%s<br/><font color="black">%s</font><br/><br/>'
+                                        % (ctime(), data))
         self.receivecount.display(self.receivecount.intValue() + bytes)
         
     def setPortCombo(self,i,value):
         self.port.addItem(value)
     def removePortItems(self,num):
         self.port.removeItem(num)
+    
+    def getDataAndType(self):
+        return self.SendtextEdit.toPlainText().toUtf8().data(), self.radioButton.isChecked() and "ascii" or "hex"
+    
+    def onSendData(self, data=None, _type="ascii"):
+        if not data: data = self.SendtextEdit.toPlainText()
+        if _type == "hex":
+            data = ''.join(data.split())
+            data = ' '.join([data[i:i+2] for i in xrange(0, len(data), 2)]).upper()
+        else:
+            data = data.replace('\n', '<br/>')
+#         self.chatTextBrowser.append('<b>Send</b> @%s<br/><font color="white">%s</font><br/><br/>'
+#                                      % (ctime(), data))
+#         self.sendTextEdit.clear()
+        bytes = _type == "ascii" and len(data) or len(data) / 2
+        self.sendcount.display(self.sendcount.intValue() + bytes)
+        
+    def clearReceiveHistory(self):
+        self.ReceivetextBrowser.clear()
+        
+    def ClearSendHistory(self):
+        self.SendtextEdit.clear()
+        
+    def clearLcdNumber(self):
+        self.sendcount.display(0)
+        self.receivecount.display(0)

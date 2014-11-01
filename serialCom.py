@@ -28,10 +28,10 @@ class MainWidget(QtGui.QDialog):
 
     def __setupSignal(self):
         self.ui.openPortButton.clicked.connect(self.__onOpenPort)
-#         self.ui.SendDataButton.clicked.connect(self.__onSendData)
-#         self.ui.ClearReceiveButton.clicked.connect(self.__onClearReceiveData)
-#         self.ui.ClearSendButton.clicked.connect(self.__onClearSendData)
-#         self.ui.recountButton.clicked.connect(self.__onReCount)
+        self.ui.SendDataButton.clicked.connect(self.__onSendData)
+        self.ui.ClearReceiveButton.clicked.connect(self.ui.clearReceiveHistory)
+        self.ui.ClearSendButton.clicked.connect(self.ui.ClearSendHistory)
+        self.ui.recountButton.clicked.connect(self.ui.clearLcdNumber)
         self.ui.flashCOM.clicked.connect(self.__onFlashCOM)
         
     def __openPort(self, settings=None):
@@ -79,10 +79,25 @@ class MainWidget(QtGui.QDialog):
         try:
             PortNum=0
             while 1:
-                    
                 name,value,type = _winreg.EnumValue(key,PortNum)
-                print value
                 self.ui.setPortCombo(PortNum, value)
                 PortNum+=1
         except WindowsError:
-            print PortNum   
+            pass
+            
+    def __onSendData(self):
+        if not self.flags["__isopen__"]:
+            QtGui.QMessageBox.information(self, "Tips", u"请先打开串口")
+            return
+        data, _type = self.ui.getDataAndType()
+        ret, msg = Util.checkData(data, _type)
+        if not ret:
+            QtGui.QMessageBox.critical(self, "Error", u"%s" % msg)
+            return
+        
+        self.ui.onSendData(data, _type)
+        if _type == "hex":
+            data = Util.toHex(''.join(data.split()))
+        self.serial.send(data, _type)
+        
+        
