@@ -19,6 +19,7 @@ class MainWidget(QtGui.QDialog):
         self.ui = MyCOM_UiHandler()
         self.flags = {"__isopen__": False, "__datatype__": "ascii"}
         self.ui.setupUi(self)
+        self.ui.speeddisplay()
         self.__setupSignal()
         
     def closeEvent(self, e):

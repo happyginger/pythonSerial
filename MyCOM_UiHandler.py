@@ -5,15 +5,14 @@ Created on 2014��10��30��
 @author: Winter
 '''
 from time import ctime
-from PyQt4.QtGui import QKeySequence, QIcon, QPixmap
+from PyQt4.QtGui import QKeySequence, QIcon, QPixmap,QGraphicsView,QGraphicsScene
 from PyQt4.QtCore import Qt
 from Ui_serial import Ui_Dialog as MyCOM_UIForm
 import Util
 
-class MyCOM_UiHandler(MyCOM_UIForm):
+class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
     def __init__(self, parent=None):
         MyCOM_UIForm.__init__(self)
-
         
     def getPortSettings(self):
         settings = {
@@ -24,7 +23,7 @@ class MyCOM_UiHandler(MyCOM_UIForm):
         settings['bytesize']=self.bytesize.currentText().toUtf8().data()
         settings['stopbits']=self.stopbits.currentText().toUtf8().data()
         settings['parity']=self.parity.currentText().toUtf8().data()
-        print settings
+
         
 #         fieldmap = ("port", "baund", "bytesize", "parity", "stopbits")
 #         settings_line = self.setComboBox.currentText().toUtf8().data()
@@ -80,3 +79,8 @@ class MyCOM_UiHandler(MyCOM_UIForm):
     def clearLcdNumber(self):
         self.sendcount.display(0)
         self.receivecount.display(0)
+    
+    def speeddisplay(self):
+        self.speedscene=QGraphicsScene()
+        self.speedscene.addLine(0,0,50,50)
+        self.SpeedView.setScene(self.speedscene)
