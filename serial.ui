@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>747</width>
-    <height>481</height>
+    <width>849</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -226,23 +226,9 @@
     </spacer>
    </item>
    <item>
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item>
     <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
@@ -319,19 +305,40 @@
       </layout>
      </item>
      <item>
-      <widget class="QGraphicsView" name="SpeedView"/>
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="MplCanvasWrapper" name="mplCanvas" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>541</width>
+         <height>201</height>
+        </size>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="Line" name="line_4">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplCanvasWrapper</class>
+   <extends>QWidget</extends>
+   <header>mplcanvaswrapper.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -9,6 +9,7 @@ from PyQt4.QtGui import QKeySequence, QIcon, QPixmap,QGraphicsView,QGraphicsScen
 from PyQt4.QtCore import Qt
 from Ui_serial import Ui_Dialog as MyCOM_UIForm
 import Util
+from numpy import arange, sin, pi
 
 class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
     def __init__(self, parent=None):
@@ -81,6 +82,11 @@ class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
         self.receivecount.display(0)
     
     def speeddisplay(self):
-        self.speedscene=QGraphicsScene()
-        self.speedscene.addLine(0,0,50,50)
-        self.SpeedView.setScene(self.speedscene)
+        #=======================================================================
+        # self.speedscene=QGraphicsScene()
+        # self.speedscene.addLine(0,0,50,50)
+        # self.SpeedView.setScene(self.speedscene)
+        #=======================================================================
+        t=arange(0,3,0.01)
+        s=sin(2*pi*t)
+        self.mplwidget_speed.plot

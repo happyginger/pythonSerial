@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'serial.ui'
 #
-# Created: Sun Nov 09 10:57:42 2014
+# Created: Sun Nov 09 14:59:12 2014
 #      by: PyQt4 UI code generator 4.9.6
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(747, 481)
+        Dialog.resize(849, 586)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8("dream.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Dialog.setWindowIcon(icon)
@@ -126,20 +126,10 @@ class Ui_Dialog(object):
         self.horizontalLayout_6.addLayout(self.verticalLayout_9)
         spacerItem = QtGui.QSpacerItem(20, 365, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
         self.horizontalLayout_6.addItem(spacerItem)
-        self.line = QtGui.QFrame(Dialog)
-        self.line.setFrameShape(QtGui.QFrame.VLine)
-        self.line.setFrameShadow(QtGui.QFrame.Sunken)
-        self.line.setObjectName(_fromUtf8("line"))
-        self.horizontalLayout_6.addWidget(self.line)
         self.verticalLayout_5 = QtGui.QVBoxLayout()
         self.verticalLayout_5.setObjectName(_fromUtf8("verticalLayout_5"))
         self.verticalLayout_4 = QtGui.QVBoxLayout()
         self.verticalLayout_4.setObjectName(_fromUtf8("verticalLayout_4"))
-        self.line_3 = QtGui.QFrame(Dialog)
-        self.line_3.setFrameShape(QtGui.QFrame.VLine)
-        self.line_3.setFrameShadow(QtGui.QFrame.Sunken)
-        self.line_3.setObjectName(_fromUtf8("line_3"))
-        self.verticalLayout_4.addWidget(self.line_3)
         self.horizontalLayout_5 = QtGui.QHBoxLayout()
         self.horizontalLayout_5.setObjectName(_fromUtf8("horizontalLayout_5"))
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
@@ -182,15 +172,21 @@ class Ui_Dialog(object):
         self.horizontalLayout_4.addWidget(self.SendtextEdit)
         self.verticalLayout_4.addLayout(self.horizontalLayout_4)
         self.verticalLayout_5.addLayout(self.verticalLayout_4)
-        self.SpeedView = QtGui.QGraphicsView(Dialog)
-        self.SpeedView.setObjectName(_fromUtf8("SpeedView"))
-        self.verticalLayout_5.addWidget(self.SpeedView)
+        self.line_5 = QtGui.QFrame(Dialog)
+        self.line_5.setFrameShape(QtGui.QFrame.HLine)
+        self.line_5.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_5.setObjectName(_fromUtf8("line_5"))
+        self.verticalLayout_5.addWidget(self.line_5)
+        self.mplCanvas = MplCanvasWrapper(Dialog)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.mplCanvas.sizePolicy().hasHeightForWidth())
+        self.mplCanvas.setSizePolicy(sizePolicy)
+        self.mplCanvas.setMinimumSize(QtCore.QSize(541, 201))
+        self.mplCanvas.setObjectName(_fromUtf8("mplCanvas"))
+        self.verticalLayout_5.addWidget(self.mplCanvas)
         self.horizontalLayout_6.addLayout(self.verticalLayout_5)
-        self.line_4 = QtGui.QFrame(Dialog)
-        self.line_4.setFrameShape(QtGui.QFrame.VLine)
-        self.line_4.setFrameShadow(QtGui.QFrame.Sunken)
-        self.line_4.setObjectName(_fromUtf8("line_4"))
-        self.horizontalLayout_6.addWidget(self.line_4)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -222,3 +218,4 @@ class Ui_Dialog(object):
         self.radioButton_2.setText(_translate("Dialog", "HEX", None))
         self.sendeditlabel.setText(_translate("Dialog", "发送区", None))
 
+from mplcanvaswrapper import MplCanvasWrapper
