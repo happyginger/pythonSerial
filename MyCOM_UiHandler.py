@@ -5,15 +5,18 @@ Created on 2014��10��30��
 @author: Winter
 '''
 from time import ctime
-from PyQt4.QtGui import QKeySequence, QIcon, QPixmap,QGraphicsView,QGraphicsScene
+from PyQt4.QtGui import QKeySequence, QIcon, QPixmap
 from PyQt4.QtCore import Qt
 from Ui_serial import Ui_Dialog as MyCOM_UIForm
 import Util
-from numpy import arange, sin, pi
+import re
 
-class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
+abbss=20
+
+class MyCOM_UiHandler(MyCOM_UIForm):
     def __init__(self, parent=None):
         MyCOM_UIForm.__init__(self)
+
         
     def getPortSettings(self):
         settings = {
@@ -42,6 +45,11 @@ class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
         
     def onRecvData(self, data):
         bytes = len(data)
+        p=re.compile(r'speed\s*=\s*(\d+)')
+        speedre=p.search(data)
+        speed=speedre.group(1)
+        self.sendcount.display(speed)
+        print speed
         if not self.radioButton.isChecked():
             data = Util.toVisualHex(data)
         else:
@@ -80,13 +88,7 @@ class MyCOM_UiHandler(MyCOM_UIForm,QGraphicsView):
     def clearLcdNumber(self):
         self.sendcount.display(0)
         self.receivecount.display(0)
+        
+    def returndata(self):
+        return self.data
     
-    def speeddisplay(self):
-        #=======================================================================
-        # self.speedscene=QGraphicsScene()
-        # self.speedscene.addLine(0,0,50,50)
-        # self.SpeedView.setScene(self.speedscene)
-        #=======================================================================
-        t=arange(0,3,0.01)
-        s=sin(2*pi*t)
-        self.mplwidget_speed.plot

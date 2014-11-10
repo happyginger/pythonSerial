@@ -8,6 +8,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
+from mplcanvaswrapper import MplCanvasWrapper
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -218,4 +219,3 @@ class Ui_Dialog(object):
         self.radioButton_2.setText(_translate("Dialog", "HEX", None))
         self.sendeditlabel.setText(_translate("Dialog", "发送区", None))
 
-from mplcanvaswrapper import MplCanvasWrapper

@@ -19,7 +19,6 @@ class MainWidget(QtGui.QDialog):
         self.ui = MyCOM_UiHandler()
         self.flags = {"__isopen__": False, "__datatype__": "ascii"}
         self.ui.setupUi(self)
-#         self.ui.speeddisplay()
         self.__setupSignal()
         
     def closeEvent(self, e):
@@ -73,7 +72,6 @@ class MainWidget(QtGui.QDialog):
         
     def __onFlashCOM(self):
         global PortNum
-        print PortNum
         for num in range(PortNum-1,-1,-1):
             self.ui.removePortItems(num)
         key = _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE,r"HARDWARE\DEVICEMAP\SERIALCOMM")

@@ -43,7 +43,7 @@ class MySerial(threading.Thread):
                 n = self.serial.inWaiting()
                 if n > 0:
                     data = "%s%s" % (data, self.serial.read(n))
-                    sleep(0.02) # data is this interval will be merged
+                    sleep(0.05) # data is this interval will be merged
                 else:
                     quit = True
                     break
@@ -51,6 +51,7 @@ class MySerial(threading.Thread):
                 break
 
         return data
+
     
     def close(self):
         if self.serial.isOpen():

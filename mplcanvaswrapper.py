@@ -15,7 +15,8 @@ import random
 import threading
 from datetime import datetime
 from matplotlib.dates import  date2num, MinuteLocator, SecondLocator, DateFormatter
- 
+
+
 X_MINUTES = 1
 Y_MAX = 100
 Y_MIN = 1
@@ -51,7 +52,7 @@ class MplCanvas(FigureCanvas):
         self.draw()
        
 class  MplCanvasWrapper(QtGui.QWidget):
-   
+    newData=0
     def __init__(self , parent =None):
         QtGui.QWidget.__init__(self, parent)
         self.canvas = MplCanvas()
@@ -75,29 +76,32 @@ class  MplCanvasWrapper(QtGui.QWidget):
         self.__generating=False
         self.__exit = False
        
-        self.tData = threading.Thread(name = "dataGenerator",target = self.generateData)
-        self.tData.start()
+#         self.tData = threading.Thread(name = "dataGenerator",target = self.generateData)
+#         self.tData.start()
     def releasePlot(self):
         self.__exit  = True
         self.tData.join()
-    def generateData(self):
-        counter=0
-        self.__generating=True
-        while(True):
-            if self.__exit:
-                break
-            if self.__generating:
-                newData = random.randint(Y_MIN, Y_MAX)
-                newTime= date2num(datetime.now())
-          
-                self.dataX.append(newTime)
-                self.dataY.append(newData)
-            
-                self.canvas.plot(self.dataX, self.dataY)    
-               
-                if counter >= MAXCOUNTER:
-                    self.dataX.pop(0)
-                    self.dataY.pop(0) 
-                else:
-                    counter+=1
-            time.sleep(INTERVAL)
+#===============================================================================
+#     def generateData(self):
+#  
+#         counter=0
+#         self.__generating=True
+#         while(True):
+#             if self.__exit:
+#                 break
+#             if self.__generating:
+# #                 newData = random.randint(Y_MIN, Y_MAX)
+#                 newTime= date2num(datetime.now())
+#            
+#                 self.dataX.append(newTime)
+#                 self.dataY.append(self.newData)
+#              
+#                 self.canvas.plot(self.dataX, self.dataY)    
+#                 
+#                 if counter >= MAXCOUNTER:
+#                     self.dataX.pop(0)
+#                     self.dataY.pop(0) 
+#                 else:
+#                     counter+=1
+#             time.sleep(INTERVAL)
+#===============================================================================
